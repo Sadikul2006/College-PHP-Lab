@@ -1,4 +1,0 @@
-<?php
-readfile("data.txt");
-?>
-
