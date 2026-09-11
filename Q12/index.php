@@ -1,5 +1,6 @@
 <!-- 12. Write a php program to write some information from a form into a text file. -->
 <?php 
+$msg = '';
 if(isset($_POST['submit'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
