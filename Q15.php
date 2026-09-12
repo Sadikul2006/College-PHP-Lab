@@ -2,10 +2,8 @@
 
 <?php
 
-class Calculator
-{
-    function add(...$numbers)
-    {
+class Calculator {
+    function add(...$numbers) {
         return array_sum($numbers);
     }
 }
