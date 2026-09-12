@@ -1,1 +1,0 @@
-<!-- 14. Write a php program to implement class and object with constructor. -->
