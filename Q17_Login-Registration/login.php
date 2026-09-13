@@ -8,7 +8,9 @@ if(isset($_POST['register'])) {
     $password = htmlspecialchars($_POST['password']);
     $confirm_password = $_POST['confirm_password'];
 
-    if($password != $confirm_password) {
+    if(empty($username)) {
+        $msg = "Please enter Username";
+    }else if($password != $confirm_password) {
         $msg = "Password does not match.";
     }else {
         $hash_password = password_hash($password, PASSWORD_DEFAULT);
@@ -65,7 +67,9 @@ if(isset($_POST['login'])) {
     <div id="registerForm">
 
         <h2>Create Account</h2>
-        <p id="msg"><?php echo $msg ?></p>
+        <?php if(isset($_POST['register'])) {
+            echo '<p id="msg">'.$msg.'</p>';
+        }?>
         <form action="" method="post">
 
             <div class="form-group">
@@ -101,7 +105,9 @@ if(isset($_POST['login'])) {
     <div id="loginForm">
 
         <h2>Welcome Back</h2>
-        <p id="msg"><?php echo $msg ?></p>
+        <?php if(isset($_POST['login'])) {
+            echo '<p id="msg">'.$msg.'</p>';
+        }?>
         <form action="" method="post">
 
             <div class="form-group">
